@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 import { Component, OnInit } from '@angular/core';
+import { LiveAnnouncer } from '@angular/cdk/a11y';
 
 @Component({
   selector: 'app-shop',
@@ -34,7 +35,7 @@ export class ShopComponent implements OnInit {
   selectedFillings: string[] = [];
 
   // TODO: #11. Announce changes with LiveAnnouncer
-  constructor() {}
+  constructor(private liveAnnouncer: LiveAnnouncer) {}
 
   ngOnInit(): void {}
 
@@ -53,7 +54,7 @@ export class ShopComponent implements OnInit {
     });
 
     const fakePurchase = `Purchase ${this.quantity} ${flavor}dumplings in the color ${this.color}!`;
-    console.log(fakePurchase);
+    this.liveAnnouncer.announce(fakePurchase);
 
     // TODO: #11. Announce changes with LiveAnnouncer
   }
