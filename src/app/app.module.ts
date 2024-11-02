@@ -16,6 +16,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { A11yModule } from '@angular/cdk/a11y';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -64,8 +65,9 @@ import { ShopComponent } from './shop/shop.component';
     MatSliderModule,
     MatToolbarModule,
     GoogleMapsModule,
+    A11yModule,
   ],
   providers: [Title],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
